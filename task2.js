@@ -66,8 +66,18 @@ function maxGrade(array){
     return resultSubjectName;
 }
 
+function searchSubject(grade, array){
+    let searchGrade=[];
+    for(let i=0; i < array.length; i++){
+        if(array[i].grade === grade)
+            searchGrade.push(array[i].subjectName);
+    }
+    return searchGrade;
+}
+
 addSubjectName(arraySession, new ObjSession('Фізичне виховання', 90));
 showSubjectName(arraySession);
 console.log(calcAVG(arraySession));
 console.log(uncountedSubject(arraySession));
 console.log(maxGrade(arraySession));
+console.log(searchSubject(40, arraySession));
