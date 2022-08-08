@@ -21,4 +21,20 @@ function showSubjectName(array){
     }
 }
 
+function addSubjectName(array, obj){
+    let test=0;
+    for(let i=0;i<array.length;i++){
+        if(array[i].subjectName===obj.subjectName){
+            test=1;
+            if(array[i].grade< obj.grade)
+                array[i].grade=obj.grade;
+            if(array[i].grade>=60)
+                array[i].enlisted=true;
+        }
+    }
+    if(test===0)
+        array.push(obj);
+    return array;
+}
+addSubjectName(arraySession, new ObjSession('Фізичне виховання', 90));
 showSubjectName(arraySession);
