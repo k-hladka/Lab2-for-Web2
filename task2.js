@@ -36,5 +36,15 @@ function addSubjectName(array, obj){
         array.push(obj);
     return array;
 }
+
+function calcAVG(array){
+    let sum=0;
+    for(let i=0;i<array.length;i++){
+        sum+=array[i].grade;
+    }
+    return sum/array.length;
+}
+
 addSubjectName(arraySession, new ObjSession('Фізичне виховання', 90));
 showSubjectName(arraySession);
+console.log(calcAVG(arraySession));
