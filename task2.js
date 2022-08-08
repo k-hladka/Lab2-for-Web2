@@ -45,6 +45,16 @@ function calcAVG(array){
     return sum/array.length;
 }
 
+function uncountedSubject(array) {
+    let count=0;
+    for(let i=0;i<array.length;i++){
+        if(array[i].enlisted===false)
+            count++;
+    }
+    return count;
+}
+
 addSubjectName(arraySession, new ObjSession('Фізичне виховання', 90));
 showSubjectName(arraySession);
 console.log(calcAVG(arraySession));
+console.log(uncountedSubject(arraySession));
